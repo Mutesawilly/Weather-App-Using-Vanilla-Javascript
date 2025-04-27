@@ -55,6 +55,7 @@ async function displayWeatherData(data) {
     const feelsLike = data.main.feels_like;
     const windSpeed = data.wind.speed;
     const weatherDescription = data.weather[0].description;
+
     // Extract the country code from the `sys` object in the API response
     const country = data.sys.country;
 
@@ -75,6 +76,7 @@ async function displayWeatherData(data) {
     // Multiplying `timezoneOffset` by 1000 converts the offset from seconds to milliseconds
     // Adding the adjusted offset to `Date.now()` gives the current time in the specified city's timezone
     const currentTime = new Date(Date.now() + timezoneOffset * 1000);
+    document.getElementById("date").innerText = currentTime;
 
     // Update weather details in the DOM
     document.getElementById("cityName").innerText = cityName;
@@ -85,28 +87,18 @@ async function displayWeatherData(data) {
     document.getElementById("description").innerText = weatherDescription;
     document.getElementById("country").innerText = country;
 
-    // Update the "src" attribute of the element with the ID "weather-icon"
-    // The `getElementById` method selects the HTML element with the specified ID.
     // The `src` property sets the source URL of an image element.
     // `iconUrl.replace("@2x", "@4x")` replaces "@2x" in the URL string with "@4x" to load a higher resolution image.
     document.getElementById("weather-icon").src = iconUrl.replace("@2x", "@4x");
 
-    // Update the "href" attribute of the element with the ID "favicon"
-    // The `getElementById` method selects the HTML element with the specified ID.
     // The `href` property sets the URL of the favicon (the small icon displayed in the browser tab).
     // Again, `iconUrl.replace("@2x", "@4x")` ensures the favicon uses a higher resolution image.
     document.getElementById("favicon").href = iconUrl.replace("@2x", "@4x");
 
-    // Update the text content of the element with the ID "sunrise"
-    // The `getElementById` method selects the HTML element with the specified ID.
-    // The `innerText` property sets the text content of the selected element.
     // `new Date(sunrise * 1000)` converts the sunrise time (in seconds since the Unix epoch) into a JavaScript Date object.
     // `.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })` formats the time into a human-readable string with only hours and minutes.
     document.getElementById("sunrise").innerText = new Date(sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    // Update the text content of the element with the ID "date"
-    // The `getElementById` method selects the HTML element with the specified ID.
-    // The `innerText` property sets the text content of the selected element.
     // `currentTime.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })`
     // formats the current date into a readable string that includes the weekday, year, month, and day.
     document.getElementById("date").innerText = currentTime.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
