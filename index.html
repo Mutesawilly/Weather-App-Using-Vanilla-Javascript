@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Weather | Current Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" id="favicon"> <!-- Add this line -->
+</head>
+<body>
+    <div class="weather-card">
+        <div class="weather-content">
+            <!-- SEARCH BAR -->
+            <div class="search-container">
+                <input type="text" placeholder="Search city..." value="Kigali" id="city" class="search">
+                <button id="submit"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- LOCATION & DATE -->
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i> <span id="cityName">Paris</span>, <span id="country">France</span>
+            </div>
+            <div class="date" id="date">Friday, June 14, 2024</div>
+
+            <!-- WEATHER ICON -->
+            <img src="https://openweathermap.org/img/wn/03d@4x.png" class="weather-icon" id="weather-icon" alt="Cloudy">
+
+            <!-- TEMPERATURE -->
+            <div class="temperature" id="temperature">19</div>
+            <div class="description" id="description">Cloudy skies</div>
+
+            <!-- WEATHER DETAILS -->
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-temperature-high"></i></div>
+                    <div class="detail-value" id="Feels">18°C</div>
+                    <div class="detail-label">Feels Like</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-tint"></i></div>
+                    <div class="detail-value" id="Humidity">65%</div>
+                    <div class="detail-label">Humidity</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-wind"></i></div>
+                    <div class="detail-value" id="WindSpeed">10 km/h</div>
+                    <div class="detail-label">Wind</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon"><i class="fas fa-sun"></i></div>
+                    <div class="detail-value" id="sunrise">07:22 AM</div>
+                    <div class="detail-label">Sunrise</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
