@@ -80,7 +80,7 @@ async function displayWeatherData(data) {
 
     // Update weather details in the DOM
     document.getElementById("cityName").innerText = cityName;
-    document.getElementById("temperature").innerText = `${temperature}°C`;
+    document.getElementById("temperature").innerText = `${temperature}`;
     document.getElementById("Feels").innerText = `${feelsLike}°C`;
     document.getElementById("Humidity").innerText = `${humidity}%`;
     document.getElementById("WindSpeed").innerText = `${windSpeed} km/h`;
